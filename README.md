@@ -1,111 +1,57 @@
-# plagiarism_detection
 📝 Plagiarism Detection System (NLP Mini Project)
 Project Overview
 
-This is a NLP-based Plagiarism Detection System that identifies whether a given text is original or plagiarized.
+This mini project implements a Plagiarism Detection System using Natural Language Processing (NLP).
+The system identifies whether a given text is original or plagiarized using machine learning techniques.
 
-The system uses:
+     Features
 
-TF-IDF for text feature extraction
+Uses TF-IDF vectorization for converting text into numerical features
 
-Logistic Regression as a machine learning classifier
+Trains a Logistic Regression classifier to detect plagiarism
 
-Evaluation metrics including accuracy, confusion matrix, and classification report
+Provides evaluation metrics: Accuracy, Confusion Matrix, and Classification Report
 
-It’s designed to be run in Jupyter Notebook or VS Code.
+Visualizes results using heatmaps
 
-Features
+Can detect word-for-word plagiarism and is extendable to paraphrased text
 
-Detects plagiarized content from a text dataset
+    Dataset
 
-Preprocessing: lowercasing, stopword removal, tokenization
+The project includes a CSV dataset (plagiarism_dataset.csv) containing 50 text samples
 
-Visualizes results with confusion matrix heatmaps
+    Labels:
 
-Easy to extend with larger datasets or advanced NLP models (e.g., BERT)
+0 → Original text
 
-Dataset
+1 → Plagiarized text
 
-The dataset plagiarism_dataset.csv contains 50 text samples:
-
-label = 0 → Original text
-
-label = 1 → Plagiarized text
-
-Example:
+    Sample:
 
 text,label
 "Machine learning allows computers to learn patterns from data.",0
 "This document is copied word for word from an existing article.",1
 
-Installation & Setup
+    Project Workflow
 
-Clone the repository
+>Data Preprocessing: Tokenization, lowercasing, stopword removal
 
-git clone https://github.com/<YOUR-USERNAME>/plagiarism-detection.git
-cd plagiarism-detection
+>Feature Extraction: TF-IDF vectorization
 
+>Model Training: Logistic Regression classifier
 
-Create a virtual environment
+>Prediction & Evaluation: Accuracy, Confusion Matrix, Classification Report
 
-python -m venv env
+>Visualization: Heatmap of the confusion matrix
 
+    Future Enhancements
 
-Activate the environment
+Expand dataset to include real-world plagiarism cases
 
-# Windows
-env\Scripts\activate
-# Mac/Linux
-source env/bin/activate
+Detect paraphrased or semantic plagiarism using advanced embeddings (Word2Vec, BERT)
 
+Build a GUI or web interface for user-friendly plagiarism checking
 
-Install dependencies
+    License
 
-pip install -r requirements.txt
-
-
-Run Jupyter Notebook
-
-jupyter notebook
-
-
-Open notebook.ipynb and run all cells.
-
-Project Structure
-plagiarism-detection/
-│── plagiarism_dataset.csv   # Dataset (50 rows)
-│── notebook.ipynb           # Jupyter notebook with code
-│── requirements.txt         # Python dependencies
-│── README.md                # GitHub documentation
-│── .gitignore               # Ignore venv and cache files
-
-Evaluation
-
-The system outputs:
-
-Accuracy
-
-Confusion Matrix
-
-Classification Report (Precision, Recall, F1-score)
-
-Example:
-
-Accuracy: 0.92
-Confusion Matrix:
-[[5 0]
- [1 4]]
-
-Future Improvements
-
-Use a larger real-world dataset
-
-Detect paraphrased content with embeddings (Word2Vec, BERT)
-
-Build a GUI or Web App (Tkinter / Streamlit)
-
-Deploy as an API (Flask / FastAPI)
-
-License
-
-This project is licensed under the MIT License – free to use, modify, and distribute with attribution.
+MIT License – free to use, modify, and distribute with attribution.
